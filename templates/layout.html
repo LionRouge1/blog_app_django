@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,22 @@
       Blog App
     {% endblock %}
   </title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <header>
-    <a href="{% url 'home' %}">Logo</a>
-    <h1>Blog application</h1>
+    <ul class="social-images">
+      <li><a href="#"><img src="{% static 'images/facebook.webp' %}" alt="facebook"></a></li>
+      <li><a href="#"><img src="{% static 'images/github.png' %}" alt="github"></a></li>
+      <li><a href="#"><img src="{% static 'images/instagram.webp' %}" alt="instagram"></a></li>
+    </ul>
   </header>
   <nav>
-    <li><a href="{% url 'home' %}">Home</a></li>
-    <li><a href="{% url 'about' %}">About</a></li>
+    <a href="{% url 'home' %}">Logo</a>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+    </ul>
   </nav>
   <main>
     {% block body %}
