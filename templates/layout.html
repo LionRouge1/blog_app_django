@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block title %}
+      Blog App
+    {% endblock %}
+  </title>
+</head>
+<body>
+  <header>
+    <a href="{% url 'home' %}">Logo</a>
+    <h1>Blog application</h1>
+  </header>
+  <nav>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+  </nav>
+  <main>
+    {% block body %}
+    {% endblock %}
+  </main>
+  <footer>
+    <p>@ 2024 </p>
+  </footer>
+</body>
+</html>
