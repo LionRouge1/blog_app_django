@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  {{user.username}}
+{% endblock %}
+
+{% block body %}
+  {% include 'users/user.html' with user=user %}
+{% endblock %}
