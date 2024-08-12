@@ -1,9 +1,36 @@
 {% extends "layout.html" %}
 
 {% block title %}
-  {{user.username}}
+  {{user.name}}
 {% endblock %}
 
 {% block body %}
-  {% include 'users/_user.html' with user=user %}
+  <section class="show-user">
+    {% include 'users/_user.html' with user=user %}
+    <div class="bio border">
+      <strong>Bio</strong>
+      <p>
+        {{user.bio}}
+      </p>
+    </div>
+    <div class="post">
+      <strong>Post #1</strong>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid nesciunt commodi magni veritatis voluptates libero, dignissimos, ipsam debitis reprehenderit, doloribus modi. Similique, obcaecati! Autem sint iusto sapiente illum at quidem?
+      </p>
+    </div>
+    <div class="post">
+      <strong>Post #2</strong>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum accusamus praesentium nisi delectus reprehenderit hic quibusdam et voluptates illo, tenetur saepe accusantium amet facilis illum laborum fugit architecto debitis earum.
+      </p>
+    </div>
+    <div class="post">
+      <strong>Post #3</strong>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur soluta consectetur, ducimus aliquam commodi nisi nobis esse rem, accusamus nemo similique nihil eveniet accusantium eaque asperiores tempore impedit nostrum provident!
+      </p>
+    </div>
+    <button type="button" class="btn btn-outline-secondary">See all posts</button>
+  </section>
 {% endblock %}

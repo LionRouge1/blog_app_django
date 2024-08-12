@@ -4,8 +4,8 @@
   {% else %}
     <img class="col" src="/media/profiles/default.png" alt="User profile">
   {% endif %}
-  <div class="col row border">
-    <p>{{user.name}}</p>
+  <div class="col row border py-2">
+    <strong>{{user.name}}</strong>
     <p class="fw-lighter text-end">Posts Counter: {{user.posts_counter}}</p>
   </div>
 </a>

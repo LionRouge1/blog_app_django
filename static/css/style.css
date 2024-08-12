@@ -78,6 +78,18 @@ header > ul > li {
   border-radius: 10px;
 }
 
+.show-user > div {
+  margin: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.show-user > button {
+  margin-left: 1rem;
+  width: max-content;
+  margin-bottom: 20px;
+}
+
 footer {
   background-color: #333;
   color: white;
