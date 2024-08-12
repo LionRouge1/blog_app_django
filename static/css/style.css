@@ -67,6 +67,10 @@ header > ul > li {
   grid-template-columns: 20% 75%;
 }
 
+.user > div {
+  border-radius: 10px;
+}
+
 .user > img {
   height: 80px;
   width: 80px !important;
