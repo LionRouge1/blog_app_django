@@ -36,5 +36,5 @@ def register(request):
   return render(request, 'users/register.html', context)
 
 def show(request, user_id):
-  # user = get_object_or_404(User, pk=user_id)
+  user = get_object_or_404(User, pk=user_id)
   return render(request, 'users/show.html', { 'user':user})

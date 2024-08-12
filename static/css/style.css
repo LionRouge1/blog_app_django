@@ -65,6 +65,7 @@ header > ul > li {
   border-radius: 10px;
   display: grid;
   grid-template-columns: 20% 75%;
+  text-decoration: none;
 }
 
 .user > div {
