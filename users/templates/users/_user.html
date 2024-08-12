@@ -1,0 +1,11 @@
+<div class="user p-2 m-2 border">
+  {% if user.photo %}
+    <img class="col" src="{{user.photo.url}}" alt="User profile">
+  {% else %}
+    <img class="col" src="/media/profiles/default.png" alt="User profile">
+  {% endif %}
+  <div class="col row">
+    <p>{{user.name}}</p>
+    <p class="fw-lighter text-end">Posts Counter: {{user.posts_counter}}</p>
+  </div>
+</div>

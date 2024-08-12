@@ -60,6 +60,19 @@ header > ul > li {
   margin: 0;
 }
 
+.user {
+  height: 100px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 20% 75%;
+}
+
+.user > img {
+  height: 80px;
+  width: 80px !important;
+  border-radius: 10px;
+}
+
 footer {
   background-color: #333;
   color: white;

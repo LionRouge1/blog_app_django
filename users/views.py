@@ -5,10 +5,18 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.views import generic
 # from .forms import CustomUserCreationForm
 # Create your views here.
-def index_view(request):
-  return render(request, 'users/index.html')
+class indexView(generic.ListView):
+  model = User
+  template_name = 'users/index.html'
+  context_object_name = "users"
+
+  def get_queryset(self):
+    return User.objects.all().order_by('-updated_at')
+
+  # return render(request, 'users/index.html')
 
 def register(request):
   # print(dir(request))
