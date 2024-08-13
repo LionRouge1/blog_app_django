@@ -25,6 +25,17 @@
     <ul>
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
+      {% if user.is_authenticated %}
+        <li><a href="">{{user.name}}</a></li>
+        <li>
+          <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Log Out</button>
+          </form>
+        </li>
+      {% else %}
+        <li><a href="{% url 'login' %}">Log In</a></li>
+      {% endif %}
     </ul>
   </nav>
   <main>
