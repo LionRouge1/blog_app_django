@@ -26,7 +26,8 @@
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
       {% if user.is_authenticated %}
-        <li><a href="">{{user.name}}</a></li>
+        <li><a href="{% url 'users:show' user.id %}">{{user.name}}</a></li>
+        <li><a href="{% url 'users:edit' %}">Edit</a></li>
         <li>
           <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
@@ -35,6 +36,7 @@
         </li>
       {% else %}
         <li><a href="{% url 'login' %}">Log In</a></li>
+        <li><a href="{% url 'users:signup' %}">Sign In</a></li>
       {% endif %}
     </ul>
   </nav>
