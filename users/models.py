@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
-from django.utils import timezone
+from PIL import Image
 from django.utils.translation import gettext_lazy as _
 from .managers import UserManager
 # from django.contrib.auth import get_user_model
@@ -27,6 +27,15 @@ class User(AbstractBaseUser, PermissionsMixin):
   def has_perm(self, perm, obj=None):
     return True
   
+  def save(self, *args, **kwargs):
+    super().save()
+    if self.photo:
+      img = Image.open(self.photo.path)
+
+      if img.height > 80 or img.width > 80:
+        new_img = (80, 80)
+        img.thumbnail(new_img)
+        img.save(self.photo.path)
   # def is_staff(self):
   #   return self.staff
   
