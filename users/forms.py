@@ -19,7 +19,7 @@ class CustomUserCreationForm(UserCreationForm):
 
   class Meta:
     model = User
-    fields = ('email', 'name', 'photo', 'bio', 'posts_counter',)
+    fields = ('email', 'name', 'bio',)
 
   # def username_clean(self):  
   #   username = self.cleaned_data['username'].lower()  
@@ -71,7 +71,8 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomUserChangeForm(UserChangeForm):
   class Meta:
     model = User
-    fields = ('email', 'name', 'photo', 'bio', 'posts_counter',)
-
-  def clean_password(self):
-    return self.initial['password1']
+    fields = ('name', 'photo', 'bio',)
+  
+class LoginForm(forms.Form):
+  email = forms.EmailField(label="Enter email")
+  password = forms.CharField(label='Enter password', widget=forms.PasswordInput)
